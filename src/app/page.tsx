@@ -1,36 +1,36 @@
-// @ts-nocheck
+
 'use client';
 import styles from "./page.module.css";
-import { client_load, waitForElement, addMarker, MapHandler } from "@/lib/maploader.tsx";
-import { Suspense, useEffect, useState } from "react";
+import { client_load, waitForElement, MapHandler } from "@/lib/maploader";
+import { useEffect, useState } from "react";
 import React from "react";
-import { Flex, MenuDivider, MenuItemOption, MenuOptionGroup, Stack } from "@chakra-ui/react";
-import { MapButtonModal, MapButtonModalInfo, MapButtonPopover } from "@/components/side-draw";
-import { MapDropdownButton } from "@/components/map-button-dropdown";
-import { VerticallyCenter } from "@/components/map-modal";
+import { Flex, MenuItemOption, MenuOptionGroup } from "@chakra-ui/react";
+import { MapButtonModal, MapButtonPopover } from "@/components/menu/menu-modal";
+import { MapDropdownButton } from "@/components/menu/menu-button-dropdown";
 import { CardView } from "@/components/map-modal-cards";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { InfoIcon, SearchIcon } from "@chakra-ui/icons";
-import { BsDatabase } from "react-icons/bs";
+import { usePathname, useRouter } from "next/navigation";
 import { FaDatabase, FaInfo, FaMap, FaSearch } from "react-icons/fa";
-import { BiInfoCircle } from "react-icons/bi";
+import { WelcomeModal } from "@/components/menu/view-modal";
 
 
 export default function Home() {
-  const [pathname, setPath] = useState(usePathname());
-  const [placeId, setPlaceId] = useState();
+
+  // Init State Hooks 
   const [posts, setPosts] = useState([]);
+  const [placeId, setPlaceId] = useState();
+  const [pathname, setPath] = useState(usePathname());
+  const [mapHandler, setMapHandler] = useState(new MapHandler(null, null))
   
-  const { replace } = useRouter();
+  // To-do: Qparams replacement for shareable link
+  // const { replace } = useRouter();
 
-  const [mapHandler, setMapHandler] = useState(new MapHandler(null))
 
-
+  // Callback on Map init
   async function set_map_instance(__map: google.maps.Map, advancedMarkers: any) {
-    console.log(advancedMarkers)
+    
+    // Set instance controls active/deactive
     __map.setOptions(
       {
-
         mapTypeControl: false,
         zoomControl: false,
         streetViewControl: false,
@@ -46,40 +46,52 @@ export default function Home() {
 
     const __handler = new MapHandler(__map, setPlaceId);
 
-    __handler.center_event = __map.addListener("center_changed", () => {
-    });
+    // To-do: Set lat/lng value in qparams for shareable links
+    __handler.center_event = __map.addListener("center_changed", () => {});
 
+    // Map handler as state
     setMapHandler(mapHandler => __handler);
 
+    // Inline import of jquery (laziness) to get around `undefined` document
     const $ = (await import('jquery')).default;
 
+    // Fetch markers from api route
     $.getJSON("/api/items", function (data) {
-      var items = [];
       console.log(data);
       $.each(data, function (index, item) {
         console.log(item)
         __handler.addMarker(item.position, { id: item.id })
       });
     })
+
   }
 
-  function set_doc_events() {
-    function handleKeyDown(event) {
+  // Handle document level events
+  function docLevelEvents() {
+    
+    function handleKeyDown(event: { code: string; }) {
       if (event.code == "Escape") {
+        // Clear posts display
         setPosts(posts => [])
       }
     }
+    // Add listeners
     document.addEventListener('keydown', handleKeyDown, true);
   }
   
+  // Load map instance, attach events to document
+  useEffect(() => { client_load(set_map_instance); waitForElement('#map', docLevelEvents) }, [])
 
-  useEffect(() => { client_load(set_map_instance); waitForElement('#map', set_doc_events) }, [])
-
+  // Effect handler as trigger when marker is clicked
   useEffect(() => {
+    /*
+    Do not place code before null check
+    */
     if (placeId == null) return;
     fetch(`/api/location?id=${placeId}`)
       .then((res) => res.json())
       .then((data: any) => {
+        //@ts-ignore
         setPosts(posts => <CardView posts={data}></CardView>)
         //@ts-ignore
         setPlaceId(placeId => null)
@@ -87,14 +99,27 @@ export default function Home() {
   }, [placeId])
 
   return (
+    // Main page view response
     <main>
       <div id="map" className={styles['map-view']}></div>
-
       <div className={styles['map-overlay']}>
-
         <div className={styles['middle-container']}>
+
+
+          {
+            // Welcome Modal
+            <WelcomeModal></WelcomeModal>
+          }
+
+          {
+            // Custom map controls/vertical menu
           <MenuBarAddon></MenuBarAddon>
-          {posts}
+          }
+          
+          { // Displays the posts if marker is clicked
+          posts
+          }
+
         </div>
       </div>
 
@@ -112,11 +137,12 @@ class MenuBarAddon extends React.Component {
     return (
       <Flex className={styles['left-tool-bar'] + " " + styles['clickable']} flexDirection={"column"} gap={6} alignItems={"center"}>
 
-        <MapButtonModal label="Display application info" icon={<FaInfo style={{margin:'auto'}} />}></MapButtonModal>
+        <MapButtonModal label="Display application info" icon={<FaInfo style={{ margin: 'auto' }} />} placement={undefined} header={""} body={""}></MapButtonModal>
 
         <MapButtonPopover label="Search post content" icon={<FaSearch />}></MapButtonPopover>
 
         <MapDropdownButton label="Display application info" icon={<FaMap style={{margin:'auto'}} />}>
+          <></>
           <MenuOptionGroup defaultValue='asc' title='Map Type' type='radio' onChange={(event)=>{
           }}>
             <MenuItemOption value='std'>Standard</MenuItemOption>
@@ -125,13 +151,14 @@ class MenuBarAddon extends React.Component {
         </MapDropdownButton>
 
         <MapDropdownButton label="Display application info" icon={<FaDatabase style={{margin:'auto'}} />}>
+          <></>
           <MenuOptionGroup title='Sources' type='checkbox' onChange={(event)=>{
           }}>
             <MenuItemOption value='funker'>Funker530</MenuItemOption>
             <MenuItemOption value='combatfootage'>r/CombatFootage</MenuItemOption>
           </MenuOptionGroup>
         </MapDropdownButton>
-        <VerticallyCenter />
+
       </Flex>
     );
   }
