@@ -23,22 +23,34 @@ Additional serverless functions and AWS templates are in the [`backend/pipeline`
 </tr>
 <tr>
     <td>Components</td>
-    <td><a>Chakra UI</a></td>
+    <td><a href='https://chakra-ui.com/docs/components'>Chakra UI</a></td>
 </tr>
 <tr>
     <td>Libraries</td>
     <td>
-    <a>Google Maps API Loader</a>, 
-    <a>Marker Clusterer</a>
+    <a href='https://github.com/googlemaps/js-api-loader'>Google Maps API Loader</a>, 
+    <a href='https://github.com/googlemaps/js-markerclusterer'>Marker Clusterer</a>
     </td>
 </tr>
 <tr>
     <td>Backend - API</td>
-    <td><a>API Gateway</a></td>
+    <td><a href='https://aws.amazon.com/api-gateway/'>API Gateway</a></td>
 </tr>
 <tr>
     <td>Database</td>
-    <td><a>DynamoDB</a></td>
+    <td><a href='https://aws.amazon.com/dynamodb/'>DynamoDB</a></td>
+</tr>
+<tr>
+    <td>Frontend</td>
+    <td>
+    <a href='https://vercel.com/'>Vercel</a>
+    </td>
+</tr>
+<tr>
+    <td>Backend</td>
+    <td>
+    <a href='https://aws.amazon.com/'>AWS</a>
+    </td>
 </tr>
 </tbody></table>
 
