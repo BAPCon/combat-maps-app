@@ -1,3 +1,4 @@
+// deprecated
 import {
     Modal,
     ModalOverlay,
@@ -15,10 +16,11 @@ import {
     StackDivider,
     Flex,
   } from '@chakra-ui/react'
+import Link from 'next/link'
 import { useEffect } from 'react'
 import { FaGithub, FaHome, FaYoutube } from 'react-icons/fa'
   
-export function VerticallyCenter() {
+export function WelcomeModal() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     useEffect(()=>{onOpen()},[])
     const icon_size = "22px"
@@ -37,17 +39,17 @@ export function VerticallyCenter() {
             </ModalBody>
             <ModalFooter justifyContent={"space-between"} fontSize={14} w={"100%"} mx={'auto'}>
                 
-                <Flex gap={"16px"} alignItems={"center"}>
+                <Flex gap={"16px"} alignItems={"center"} color={"lightgray"}>
                     <FaHome size={icon_size} />
                     <Text>Home Page</Text>
                 </Flex>
-                <Flex gap={"16px"} alignItems={"center"}>
+                <Flex gap={"16px"} alignItems={"center"} color={"lightgray"}>
                     <FaYoutube size={icon_size} />
                     <Text>Youtube</Text>
                 </Flex>
                 <Flex gap={"16px"} alignItems={"center"}>
                     <FaGithub size={icon_size} />
-                    <Text>Github Repo</Text>
+                    <Link href="https://www.github.com/bapcon/combat-maps-app">Github Repo</Link>
                 </Flex>
             </ModalFooter>
           </ModalContent>

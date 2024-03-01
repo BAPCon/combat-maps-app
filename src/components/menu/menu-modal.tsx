@@ -26,7 +26,7 @@ import {
   InputLeftElement,
 } from '@chakra-ui/react'
 import React from 'react'
-import { MapButtonSquare } from './map-button-square'
+import { MapButtonSquare } from './menu-button-square'
 import { FaSearchLocation } from 'react-icons/fa'
 
 export function MapButtonModal(props: { placement: any; label: string; icon: React.ReactElement; header: string; body: string}) {
@@ -64,8 +64,7 @@ export function MapButtonModal(props: { placement: any; label: string; icon: Rea
   )
 }
 
-
-export function MapButtonPopover(props: { icon: React.ReactElement<any, string | React.JSXElementConstructor<any>> | undefined }) {
+export function MapButtonPopover(props: { icon: React.ReactElement<any, string | React.JSXElementConstructor<any>> | undefined; label: string}) {
   return (
     <>
       {/*@ts-ignore*/}

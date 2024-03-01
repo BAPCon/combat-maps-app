@@ -1,48 +1,26 @@
 import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
   useDisclosure,
   Button,
   Heading,
   Stack,
-  StackItem,
   Text,
-  StackDivider,
   Flex,
   Box,
   Card,
   Image,
-  CardHeader,
   CardBody,
   CardFooter,
   ButtonGroup,
   Divider,
-  Avatar,
   Tag,
   Wrap,
   WrapItem,
   Kbd,
 } from '@chakra-ui/react'
-import styles from "./map-modal-cards.module.css";
 import React from 'react'
-import { useEffect } from 'react'
-import { FaCaretLeft, FaCaretRight, FaGithub, FaHome, FaYoutube } from 'react-icons/fa'
 
 export function CardView(props: { posts: {key: any, id: any; title: string; selftext: string; event_date: { month: any; day: any; year: any; }; source: string; }[]; }) {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  /*
-  (
-    <Flex flexDirection="row" alignItems={'center'} mt="auto" w={"25vw"} justifyContent={'center'} gap={10}>
-          <FaCaretLeft size={"32px"} pointerEvents={"all"} onClick={()=>(alert('left'))}/>
-          <FaCaretRight size={"32px"} pointerEvents={"all"} onClick={()=>(alert('r'))}/>
-        </Flex>
-  )
-  */
   return (
     <>
       

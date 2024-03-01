@@ -63,9 +63,10 @@ export class MapHandler
 {
 
     map;
-    set_params: Function;
+    set_params: Function | null;
+    center_event: google.maps.MapsEventListener | undefined;
 
-    constructor(map: google.maps.Map | null, set_params: Function )
+    constructor(map: google.maps.Map | null, set_params: Function | null)
     {
         this.map = map;
         this.set_params = set_params;
@@ -95,6 +96,7 @@ export class MapHandler
         // Make React based infoWindow
 
         marker.addListener('click', () => {
+            if (!this.set_params) return;
             this.set_params(marker_data.id)
         });
     }

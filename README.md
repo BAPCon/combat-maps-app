@@ -92,6 +92,9 @@ Using finetuned GPT-3.5 models and [`stanford/stanza`](https://github.com/stanfo
 <tr>
 <td>Info/help modal</td>
 </tr>
+<tr>
+<td>LatLng/filters => query params</td>
+</tr>
 </tbody>
 </table>
 
