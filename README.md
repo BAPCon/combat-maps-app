@@ -38,7 +38,7 @@ Additional serverless functions and AWS templates are in the [`backend/pipeline`
 </tr>
 <tr>
     <td>Database</td>
-    <td><a href='https://aws.amazon.com/dynamodb/'>DynamoDB</a></td>
+    <td><a href='https://aws.amazon.com/dynamodb/'>DynamoDB</a> => <a href='https://aws.amazon.com/s3/'>static S3 (json)</a></td>
 </tr>
 <tr>
     <td>Frontend</td>
@@ -54,16 +54,21 @@ Additional serverless functions and AWS templates are in the [`backend/pipeline`
 </tr>
 </tbody></table>
 
-<br>
 
-## Learn More
+## About
 
-To learn more about Next.js, take a look at the following resources:
+Combat Maps is a web application that displays [AI geotagged posts](https://www.github.com/BAPCon/combat-maps-backend) from sources like [`r/combatfootage`]('https://www.reddit.com/r/combatfootage') and [`Funker530.com`](https://www.funker530.com).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Using finetuned GPT-3.5 models and [`stanford/stanza`](https://github.com/stanfordnlp/stanza) (NLP library), video posts from these sources are processed and a best guess geotag is generated.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Deployment
+
+```python
+# This repository can be deployed directly to Vercel
+# An API key will be needed for Google Maps Platform
+# The included public API key in this package is domain restricted
+# TO-DO: instructions for deployment
+```
 
 ### Non-Code content
 [Next.js]: https://img.shields.io/github/package-json/dependency-version/bapcon/combat-maps-app/next?color=463f37&logo=next.js&logoColor=fff&style=for-the-badge
