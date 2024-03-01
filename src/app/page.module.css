@@ -1,0 +1,113 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.map-view {
+  width: 100vw;
+  height: 100vh;
+}
+
+.blur-bg {
+  backdrop-filter: 3px;
+}
+
+.map-overlay {
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes shadowInsetLoad {
+  from {
+  }
+  to {
+  box-shadow: inset 0px 0px 30px 5px rgb(0, 0, 0);
+  }
+}
+
+.map-overlay {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; 
+  
+}
+
+.clickable {
+  pointer-events: all;
+}
+
+.top-tool-bar {
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+}
+
+.gm-style-mtc-bbw {
+  left: 0 !important;
+  right: 60px !important;
+}
+
+.left-tool-bar {
+  height: 100%;
+  margin: 10px 0 0 0;
+  padding: 0px;
+  border-radius: 5px;
+}
+
+.left-tool-bar-wrapper:hover {
+  opacity: 1;
+}
+
+.left-tool-bar-wrapper {
+  height: 100%;
+  padding: 7px;
+  opacity: .65;
+  pointer-events: all;
+}
+
+.top-container {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+}
+
+.middle-container {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  overflow-y: hidden;
+  bottom: 10;
+}
+
+.bottom-container {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.chakra-slide {
+  pointer-events: all !important;
+}
+
+.chakra-modal__content-container .css-17pwl6t {
+  pointer-events: none !important;
+}

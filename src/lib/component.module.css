@@ -1,0 +1,19 @@
+.cs {
+    padding: 5px;
+    min-width: 120px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.gm-style-iw{
+    background-color: red;
+}
+
+
+
+.cs h2{
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.cs p {
+    font-weight: 100;
+}

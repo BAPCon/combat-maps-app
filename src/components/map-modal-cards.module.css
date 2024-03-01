@@ -1,0 +1,14 @@
+.card-header {
+    font-size: 13px;
+  }
+  .hide-scroll {
+    color: red;
+  }
+
+.marker-icon
+{
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  border: 1px solid black;
+}
