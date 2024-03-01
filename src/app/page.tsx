@@ -1,8 +1,7 @@
-//@ts-nocheck
+// @ts-nocheck
 'use client';
 import styles from "./page.module.css";
 import { client_load, waitForElement, addMarker, MapHandler } from "@/lib/maploader.tsx";
-import $ from 'jquery';
 import { Suspense, useEffect, useState } from "react";
 import React from "react";
 import { Flex, MenuDivider, MenuItemOption, MenuOptionGroup, Stack } from "@chakra-ui/react";
@@ -22,12 +21,9 @@ export default function Home() {
   const [placeId, setPlaceId] = useState();
   const [posts, setPosts] = useState([]);
   
-  const searchParams = useSearchParams();
-  
   const { replace } = useRouter();
 
   const [mapHandler, setMapHandler] = useState(new MapHandler(null))
-  const reqParams = new URLSearchParams(searchParams);
 
 
   async function set_map_instance(__map: google.maps.Map, advancedMarkers: any) {
@@ -51,16 +47,11 @@ export default function Home() {
     const __handler = new MapHandler(__map, setPlaceId);
 
     __handler.center_event = __map.addListener("center_changed", () => {
-      //@ts-ignore
-      const params = reqParams;
-      //@ts-ignore
-      params.set("lat", __map.getCenter().lat())
-      //@ts-ignore
-      params.set("lng", __map.getCenter().lng())
-      replace(`${pathname}?${params.toString()}`);
     });
 
     setMapHandler(mapHandler => __handler);
+
+    const $ = (await import('jquery')).default;
 
     $.getJSON("/api/items", function (data) {
       var items = [];
@@ -69,14 +60,7 @@ export default function Home() {
         console.log(item)
         __handler.addMarker(item.position, { id: item.id })
       });
-    });
-
-    const latParams = reqParams.get('lat');
-    const lngParams = reqParams.get('lng');
-
-    if (latParams && lngParams) {
-      __handler.map?.setCenter({ lat: Number(latParams), lng: Number(lngParams) })
-    }
+    })
   }
 
   function set_doc_events() {
@@ -87,22 +71,7 @@ export default function Home() {
     }
     document.addEventListener('keydown', handleKeyDown, true);
   }
-
-  function setParams(key: string, value: string)
-  {
-    reqParams.set(key, value)
-    replace(`${pathname}?${reqParams.toString()}`);
-    mapHandler.center_event.remove();
-    mapHandler.center_event = mapHandler.map.addListener("center_changed", () => {
-      //@ts-ignore
-      const params = reqParams;
-      //@ts-ignore
-      params.set("lat", mapHandler.map.getCenter().lat())
-      //@ts-ignore
-      params.set("lng", mapHandler.map.getCenter().lng())
-      replace(`${pathname}?${params.toString()}`);
-    });
-  }
+  
 
   useEffect(() => { client_load(set_map_instance); waitForElement('#map', set_doc_events) }, [])
 
@@ -124,7 +93,7 @@ export default function Home() {
       <div className={styles['map-overlay']}>
 
         <div className={styles['middle-container']}>
-          <MenuBarAddon setParams={setParams}></MenuBarAddon>
+          <MenuBarAddon></MenuBarAddon>
           {posts}
         </div>
       </div>
@@ -149,7 +118,6 @@ class MenuBarAddon extends React.Component {
 
         <MapDropdownButton label="Display application info" icon={<FaMap style={{margin:'auto'}} />}>
           <MenuOptionGroup defaultValue='asc' title='Map Type' type='radio' onChange={(event)=>{
-            this.props.setParams("map", event)
           }}>
             <MenuItemOption value='std'>Standard</MenuItemOption>
             <MenuItemOption value='sat'>Satellite</MenuItemOption>
@@ -158,7 +126,6 @@ class MenuBarAddon extends React.Component {
 
         <MapDropdownButton label="Display application info" icon={<FaDatabase style={{margin:'auto'}} />}>
           <MenuOptionGroup title='Sources' type='checkbox' onChange={(event)=>{
-            this.props.setParams("sources", event)
           }}>
             <MenuItemOption value='funker'>Funker530</MenuItemOption>
             <MenuItemOption value='combatfootage'>r/CombatFootage</MenuItemOption>
