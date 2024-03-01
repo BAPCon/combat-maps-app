@@ -4,8 +4,9 @@ The `next.js` codebase for the [`combat-maps`](/BAPcon) web app.
 Additional serverless functions and AWS templates are in the [`backend/pipeline`](/BAPcon/combat-maps-pipeline) repository.
 <div>
 
-<span style="margin-right:10px;">[![Next.js]](https://www.codefactor.io/)</span>
-<span style="margin-right:10px;">[![site-link]](https://www.codefactor.io/)</span>
+<span style="margin-right:10px;">[![Next.js]](https://github.com/BAPCon/combat-maps-app/blob/master/package.json)</span>
+<span style="margin-right:10px;">[![site-link]](https://combat-maps.vercel.app/)</span>
+<span style="margin-right:10px;">[![aws-templates]]()</span>
 
 </div>
 
@@ -55,3 +56,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ### Non-Code content
 [Next.js]: https://img.shields.io/github/package-json/dependency-version/bapcon/combat-maps-app/next?color=463f37&logo=next.js&logoColor=fff&style=for-the-badge
 [site-link]: https://img.shields.io/badge/Visit_Site-%20?style=for-the-badge&logo=amazonec2&logoColor=white&labelColor=463f37
+[aws-templates]: https://img.shields.io/badge/AWS-templates_%26_code-blue?style=for-the-badge&logo=amazons3&logoColor=white
