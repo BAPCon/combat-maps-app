@@ -18,11 +18,15 @@ Additional serverless functions and AWS templates are in the [`backend/pipeline`
 <tr><th>Category</th><th>Technology Names</th></tr>
 <tr>
     <td>Framework</td>
-    <td>[Next.js](https://nextjs.org/)</td>
+    <td><a>Next.js</a></td>
 </tr>
 <tr>
     <td>Components</td>
-    <td>Chakra UI</td>
+    <td><a>Chakra UI</a></td>
+</tr>
+<tr>
+    <td>Database</td>
+    <td><a>DynamoDb</a></td>
 </tr>
 </tbody></table>
 
