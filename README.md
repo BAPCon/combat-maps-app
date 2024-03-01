@@ -8,20 +8,22 @@ Additional serverless functions and AWS templates are in the [`backend/pipeline`
 <span style="margin-right:10px;">[![site-link]](https://www.codefactor.io/)</span>
 
 </div>
-<style>
-    td {
-       min-width: 16vw;
-       border-right: 1px solid white;
-    }
-</style>
 
 ---
 
-### Tech Used
+### Technology Stack
+
 <table>
 <tbody>
-<tr><th></th><th></th></tr>
-<tr><td>Value 1</td><td>Value 2</td></tr>
+<tr><th>Category</th><th>Technology Names</th></tr>
+<tr>
+    <td>Framework</td>
+    <td>[Next.js](https://nextjs.org/)</td>
+</tr>
+<tr>
+    <td>Components</td>
+    <td>Chakra UI</td>
+</tr>
 </tbody></table>
 
 <br>
