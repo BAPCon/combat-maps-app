@@ -64,6 +64,7 @@ Using finetuned GPT-3.5 models and [`stanford/stanza`](https://github.com/stanfo
 #### Visit deployment: 
 #### https://combat-maps.vercel.app/
 <i style="color:red">Project license</i>
+
 ### Deployment
 
 ```python
