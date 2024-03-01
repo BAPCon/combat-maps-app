@@ -3,7 +3,7 @@
 import styles from "./page.module.css";
 import { client_load, waitForElement, addMarker, MapHandler } from "@/lib/maploader.tsx";
 import $ from 'jquery';
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import React from "react";
 import { Flex, MenuDivider, MenuItemOption, MenuOptionGroup, Stack } from "@chakra-ui/react";
 import { MapButtonModal, MapButtonModalInfo, MapButtonPopover } from "@/components/side-draw";
@@ -21,7 +21,9 @@ export default function Home() {
   const [pathname, setPath] = useState(usePathname());
   const [placeId, setPlaceId] = useState();
   const [posts, setPosts] = useState([]);
+  
   const searchParams = useSearchParams();
+  
   const { replace } = useRouter();
 
   const [mapHandler, setMapHandler] = useState(new MapHandler(null))
