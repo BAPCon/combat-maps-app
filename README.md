@@ -18,7 +18,7 @@ Additional serverless functions and AWS templates are in the [`backend/pipeline`
 <tr><th>Category</th><th>Technology Names</th></tr>
 <tr>
     <td>Framework</td>
-    <td><a>Next.js</a></td>
+    <td><a href="/">Next.js</a></td>
 </tr>
 <tr>
     <td>Components</td>
