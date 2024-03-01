@@ -7,7 +7,7 @@ type ResponseData = {
 
 async function load_items()
 {
-  const file = await fs.readFile(process.cwd() + '/src/pages/api/clusters.json', 'utf8');
+  const file = await fs.readFile('./clusters.json', 'utf8');
   return JSON.parse(file);
 }
 
