@@ -1,6 +1,9 @@
+## combat-maps-app
 The `next.js` codebase for the [`combat-maps`](/BAPcon) web app. 
 
-Additional serverless functions and AWS templates are in the backend/pipeline [`repository`](/BAPcon/combat-maps-pipeline).
+Additional serverless functions and AWS templates are in the [`backend/pipeline`](/BAPcon/combat-maps-pipeline) repository.
+
+[![Next.js]](https://www.codefactor.io/repository/github/jktrn/enscribe.dev)
 
 ## Getting Started
 
@@ -36,3 +39,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+### Non-Code content
+[Next.js]: https://img.shields.io/github/package-json/dependency-version/jktrn/enscribe.dev/next?color=463f37&logo=next.js&logoColor=fff&style=for-the-badge
