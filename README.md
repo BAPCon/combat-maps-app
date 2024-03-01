@@ -78,23 +78,18 @@ Using finetuned GPT-3.5 models and [`stanford/stanza`](https://github.com/stanfo
 <table>
 <tbody>
 <tr>
-<td>Implement</td>
 <td><h5>Features</h5></td>
 </tr>
 <tr>
-<td></td>
 <td>Search functionality</td>
 </tr>
 <tr>
-<td></td>
 <td>Source filters functionality</td>
 </tr>
 <tr>
-<td></td>
 <td>Map style select functionality</td>
 </tr>
 <tr>
-<td></td>
 <td>Info/help modal</td>
 </tr>
 </tbody>
