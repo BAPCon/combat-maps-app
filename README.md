@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+The `next.js` codebase for the [`combat-maps`](/BAPcon) web app. 
+
+Additional serverless functions and AWS templates are in the backend/pipeline [`repository`](/BAPcon/combat-maps-pipeline).
 
 ## Getting Started
 
