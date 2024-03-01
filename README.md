@@ -25,8 +25,19 @@ Additional serverless functions and AWS templates are in the [`backend/pipeline`
     <td><a>Chakra UI</a></td>
 </tr>
 <tr>
+    <td>Libraries</td>
+    <td>
+    <a>Google Maps API Loader</a>, 
+    <a>Marker Clusterer</a>
+    </td>
+</tr>
+<tr>
+    <td>Backend - API</td>
+    <td><a>API Gateway</a></td>
+</tr>
+<tr>
     <td>Database</td>
-    <td><a>DynamoDb</a></td>
+    <td><a>DynamoDB</a></td>
 </tr>
 </tbody></table>
 
