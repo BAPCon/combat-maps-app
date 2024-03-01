@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { renderToStaticMarkup, renderToString } from 'react-dom/server';
 import styles from './component.module.css'
 import { renderIntoDocument } from 'react-dom/test-utils';
-import { render } from 'react-dom';
 import { createRoot } from 'react-dom/client';
 import Image from 'next/image';
 let MarkerLib: any;

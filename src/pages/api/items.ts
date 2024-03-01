@@ -24,10 +24,12 @@ export default async function handler(
       markers.push(
         {
           id: Object.keys(data)[i],
+          // @ts-ignore
           position: Object.values(data)[i].center
         }
       )
     }
+    //@ts-ignore
     res.status(200).json(markers)
   })
 }

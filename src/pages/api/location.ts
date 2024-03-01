@@ -20,6 +20,7 @@ export default async function handler(
 ) {
   load_items().then((data) => {
     console.log(req.query.id)
+    //@ts-ignore
     res.status(200).json(data[req.query.id].items)
   })
 }

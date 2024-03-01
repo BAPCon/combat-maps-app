@@ -33,7 +33,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { FaCaretLeft, FaCaretRight, FaGithub, FaHome, FaYoutube } from 'react-icons/fa'
 
-export function CardView(props) {
+export function CardView(props: { posts: {key: any, id: any; title: string; selftext: string; event_date: { month: any; day: any; year: any; }; source: string; }[]; }) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   /*
   (
@@ -47,11 +47,11 @@ export function CardView(props) {
     <>
       
       <Box gap="1rem" p="0 1rem 1rem 1rem" mr="auto" my={'auto'} h="90vh" backgroundColor={"rgba(0,0,0,0)"} display={"flex"} flexDirection={"column"} pointerEvents={"all"} className={"hide-scroll"}>
-        {props.posts.map((item) =>
+        {props.posts.map((item: { key: any; id: any; title: string; selftext: string; event_date: { month: any; day: any; year: any; }; source: string; }) =>
         {
           return (
             
-        <Card w="25vw" className='soft-shadow' p={0}>
+        <Card w="25vw" className='soft-shadow' p={0} key={item.key}>
         <CardBody>
           <Stack display={"flex"} justifyContent={"center"}>
             

@@ -29,7 +29,7 @@ import React from 'react'
 import { MapButtonSquare } from './map-button-square'
 import { FaSearchLocation } from 'react-icons/fa'
 
-export function MapButtonModal(props) {
+export function MapButtonModal(props: { placement: any; label: string; icon: React.ReactElement; header: string; body: string}) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const side = props.placement ? props.placement : 'right';
   return (
@@ -65,7 +65,7 @@ export function MapButtonModal(props) {
 }
 
 
-export function MapButtonPopover(props) {
+export function MapButtonPopover(props: { icon: React.ReactElement<any, string | React.JSXElementConstructor<any>> | undefined }) {
   return (
     <>
       {/*@ts-ignore*/}

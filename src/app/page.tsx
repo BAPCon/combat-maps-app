@@ -102,8 +102,6 @@ export default function Home() {
     });
   }
 
-
-
   useEffect(() => { client_load(set_map_instance); waitForElement('#map', set_doc_events) }, [])
 
   useEffect(() => {
