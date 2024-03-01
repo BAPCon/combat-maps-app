@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import projectsData from './data'
 import { promises as fs } from 'fs';
+import path from 'path';
 
 type ResponseData = {
   message: string
@@ -8,7 +8,7 @@ type ResponseData = {
 
 async function load_items()
 {
-  const file = await fs.readFile(process.cwd() + '/src/pages/api/clusters.json', 'utf8');
+  const file = await fs.readFile(path.join(process.cwd(), 'data/clusters.json'), 'utf8');
   return JSON.parse(file);
 }
 
