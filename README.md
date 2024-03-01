@@ -57,7 +57,7 @@ Additional serverless functions and AWS templates are in the [`backend/pipeline`
 
 ## About
 
-Combat Maps is a web application that displays [AI geotagged posts](https://www.github.com/BAPCon/combat-maps-backend) from sources like [`r/combatfootage`]('https://www.reddit.com/r/combatfootage') and [`Funker530.com`](https://www.funker530.com).
+Combat Maps is a web application that displays [AI geotagged posts](https://www.github.com/BAPCon/combat-maps-backend) from sources like [`r/combatfootage`](https://www.reddit.com/r/combatfootage) and [`Funker530.com`](https://www.funker530.com).
 
 Using finetuned GPT-3.5 models and [`stanford/stanza`](https://github.com/stanfordnlp/stanza) (NLP library), video posts from these sources are processed and a best guess geotag is generated.
 
