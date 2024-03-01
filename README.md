@@ -70,7 +70,6 @@ Using finetuned GPT-3.5 models and [`stanford/stanza`](https://github.com/stanfo
 # TO-DO: instructions for deployment
 ```
 
-### Non-Code content
 [Next.js]: https://img.shields.io/github/package-json/dependency-version/bapcon/combat-maps-app/next?color=463f37&logo=next.js&logoColor=fff&style=for-the-badge
 [site-link]: https://img.shields.io/badge/Visit_Site-%20?style=for-the-badge&logo=amazonec2&logoColor=white&labelColor=463f37
 [aws-templates]: https://img.shields.io/badge/AWS-templates_%26_code-blue?style=for-the-badge&logo=amazons3&logoColor=white
