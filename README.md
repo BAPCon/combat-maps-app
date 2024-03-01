@@ -61,6 +61,9 @@ Combat Maps is a web application that displays [AI geotagged posts](https://www.
 
 Using finetuned GPT-3.5 models and [`stanford/stanza`](https://github.com/stanfordnlp/stanza) (NLP library), video posts from these sources are processed and a best guess geotag is generated.
 
+#### Visit deployment: 
+#### https://combat-maps.vercel.app/
+<i style="color:red">Project license</i>
 ### Deployment
 
 ```python
