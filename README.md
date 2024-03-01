@@ -79,7 +79,11 @@ Using finetuned GPT-3.5 models and [`stanford/stanza`](https://github.com/stanfo
 <tbody>
 <tr>
 <td>Implement</td>
-<td>```Search functionality```</td>
+<td><h5>Features</h5></td>
+</tr>
+<tr>
+<td></td>
+<td>Search functionality</td>
 </tr>
 <tr>
 <td></td>
