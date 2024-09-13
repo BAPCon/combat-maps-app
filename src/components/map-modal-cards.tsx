@@ -29,7 +29,7 @@ export function CardView(props: { posts: {key: any, id: any; title: string; self
         {
           return (
             
-        <Card w="25vw" className='soft-shadow' p={0} key={item.key}>
+        <Card w="20vw" className='soft-shadow' p={0} key={item.key}>
         <CardBody>
           <Stack display={"flex"} justifyContent={"center"}>
             
@@ -37,8 +37,9 @@ export function CardView(props: { posts: {key: any, id: any; title: string; self
             src={`https://cf-app-tools.s3.us-east-2.amazonaws.com/public/previews/${item.id}.png`}
             alt=''
             borderRadius='lg'
-            maxH={200}
-            aspectRatio={"2/1"}
+            maxH={300}
+            aspectRatio={"2/1.5"}
+            objectFit='contain'
             />
 
           </Stack>
