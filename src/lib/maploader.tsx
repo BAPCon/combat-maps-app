@@ -13,7 +13,7 @@ export function client_load(set_object: Function) {
     if (typeof window !== "undefined") {
 
         const loader = new Loader({
-            apiKey: "AIzaSyDR4igdAcSepnlXhlUPDgI_ADw93enjkeo",
+            apiKey: "AIzaSyB1t0QPJWcqlhKN2H3KA4p-Su2CYvHBuEQ",
             version: "weekly",
             libraries: ["maps", "marker"]
         });
